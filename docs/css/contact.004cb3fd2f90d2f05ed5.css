@@ -1,0 +1,850 @@
+@import url(https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap);
+
+:root {
+  --base-font-size: 16px;
+
+  /* Colors */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-orange: #E76020;
+  --color-gray: #9E9E9E;
+  /* Border */
+  --border: 1px solid var(--color-orange);
+  --border-radius: 10px;
+
+  /* Fonts */
+  --pts: "PT Sans", sans-serif;
+  --bn: "Bona Nova", sans-serif;
+
+  /* Sizes */
+  --size-container-width: 1200px;
+  --size-container-padding: 16px;
+
+
+  /* Line Heights */
+  --line-height-small: 1.2;
+  --line-height-medium: 1.5;
+  --line-height-large: 1.8;
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none
+}
+
+/**
+ * Современный нормалайз стилей
+ */
+
+/* Нормализация блочной модели */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/* Базовые сбросы отступов */
+body,
+:where(blockquote, figure, fieldset):where([class]) {
+  margin: 0;
+}
+
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+:where(h1, h2, h3, h4, h5, h6,
+  p, ul, ol, dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  padding: 0;
+  border: none;
+}
+
+/* Списки */
+:where(ul[class]) {
+  list-style: none;
+}
+
+/* Типография */
+html {
+  height: 100%;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/* Параграфы */
+p {
+  margin-block: 0;
+}
+
+
+/* Изображения и медиа */
+/* img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+} */
+
+/* SVG */
+:where([fill]:not([fill="none"], [fill^="url"])) {
+  fill: currentColor;
+}
+
+:where([stroke]:not([stroke="none"], [stroke^="url"])) {
+  stroke: currentColor;
+}
+
+svg * {
+  transition-property: fill, stroke;
+}
+
+/* Формы */
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+:where(input, textarea, select):where([class]) {
+  appearance: none;
+  border-radius: 0;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+/* Ссылки */
+/* a:where([class]) {
+  display: inline-flex;
+} */
+
+address {
+  font-style: normal;
+}
+
+/* Таблицы */
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+/* Фокус для доступности */
+:where(:focus-visible) {
+  outline: 2px solid Highlight;
+  outline: 2px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+/* Reduced motion для доступности */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  background-color: #2b2222;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  width: 100%;
+  padding-block: 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.header--scrolled {
+  padding-block: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 10vw;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.header__logo {
+  font: 700 2.5rem/1 var(--bn);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+/* Бургер кнопка */
+
+.burger {
+  z-index: 20;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.burger:active {
+  transform: scale(1.1);
+}
+
+.burger span {
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-white);
+  border-radius: 2px;
+  transition: all 0.1s ease;
+}
+
+/* _______________ */
+
+.header__menu {
+  display: flex;
+  gap: 4vw;
+  margin-left: 3vw;
+  padding-top: 1em;
+}
+
+.header__menu-link {
+  font: 700 1.25rem/1 var(--pts);
+  color: var(--color-white);
+}
+
+.active {
+  color: var(--color-gray);
+  cursor: default;
+}
+
+@media (max-width: 770px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .container {
+    padding-inline: 3vw;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .header {
+    padding-block: 20px;
+  }
+
+  .header--scrolled {
+    padding-block: 8px;
+  }
+
+  .header__menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: all 0.6s ease;
+    transform: translateX(150%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .header__logo {
+    font: 700 2rem / 1 var(--bn);
+  }
+
+  .header__menu.active {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .header__menu-link {
+    font: 700 1rem/1 var(--pts);
+  }
+}
+
+@media (max-width: 480px) {}
+
+.burger.active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* footer */
+
+.footer {
+  padding-block: 50px 70px;
+  background-color: #121212;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+.footer_logo {
+  font: 700 26px/1 var(--bn);
+  color: var(--color-white);
+  letter-spacing: 0.06em;
+  padding-top: 5px;
+
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  font: 700 1.6rem/1.25 var(--pts);
+  color: var(--color-white);
+  gap: 1rem;
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.87rem;
+}
+
+.footer img {
+  height: 35px;
+}
+
+@media (max-width: 770px) {
+
+  .footer {
+    padding: 0;
+  }
+
+  .footer .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+    padding: 5%;
+  }
+
+  .footer-list {
+    align-items: center;
+  }
+
+  .footer_logo {
+    font: 700 20px/1 var(--bn);
+  }
+
+  .footer-list {
+    font: 700 20px/1 var(--pts);
+  }
+
+  .footer img {
+    height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .footer .container {
+    align-items: flex-start;
+  }
+
+  .footer_logo {
+    font: 700 16px/1 var(--bn);
+  }
+
+  .footer-list {
+    align-items: flex-start;
+    font: 700 16px/1 var(--pts);
+  }
+
+  .footer img {
+    height: 20px;
+  }
+}
+
+/* button */
+.button_big {
+  margin-top: 10px;
+  padding: 22px 70px;
+  white-space: nowrap;
+}
+
+.button_small {
+  padding: 12px 35px;
+  white-space: nowrap;
+
+}
+
+.button {
+  /* z-index: 2; */
+  background-color: var(--color-orange);
+  border: 0 solid var(--color-orange);
+  border-radius: 10px;
+  font: 700 27.7px/1 var(--pts);
+  color: var(--color-white);
+  transition: all 0.2s ease;
+}
+
+.button:hover,
+.button:active {
+  background-color: #EB7F4C;
+}
+
+.button_mob {
+  display: none;
+  padding: 16px 60px;
+  border: 2px solid var(--color-white);
+  border-radius: 10px;
+  font: 700 18px/1 var(--pts);
+  color: var(--color-white);
+  transition: all 0.2s ease;
+}
+
+.button_mob:hover,
+.button_mob:active {
+  background-color: var(--color-orange);
+}
+
+.buttons {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 29vh;
+  text-align: center;
+}
+
+
+.address {
+  display: flex;
+  flex-direction: column;
+  font: 400 22px/125% var(--pts);
+  text-align: left;
+}
+
+
+.block {
+
+  /* display: flex;
+    justify-content: center; */
+  background-color: var(--color-white);
+}
+
+.title-bn32 {
+  font: 700 31px/1 var(--bn);
+  color: var(--color-black);
+  margin-bottom: 30px;
+}
+
+.Desc-pts18 {
+  font: 400 18px/1.2 var(--pts);
+  color: var(--color-black);
+  white-space: pre-wrap;
+}
+
+#showMore {
+  display: none;
+}
+
+@media (max-width: 770px) {
+  .button {
+    font: 700 18px/1 var(--pts);
+  }
+
+  .button_small {
+    padding: 16px 60px;
+    margin: 0;
+  }
+
+  .button_big {
+    /* max-width: 50%; */
+    padding: 16px 60px;
+  }
+
+  .block {
+    padding: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .button_mob {
+    display: block;
+  }
+
+  .buttons {
+    margin-bottom: 60px;
+    width: 100%;
+  }
+
+  .button_big {
+    display: block;
+  }
+
+  .address {
+    font: 400 18px/124% var(--pts);
+  }
+
+  .title-bn32 {
+    Font: 700 28px/1 var(--bn);
+    margin-bottom: 20px;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+/* Стили для фоновых картинок */
+.bgr {
+    background-size: cover;
+    background-position: center;
+}
+
+/* main */
+
+.info {
+    margin-top: 100px;
+    background-color: #000000;
+}
+
+/* Image */
+.info__pic {
+    aspect-ratio: 83 / 89;
+    background-image: url(/electica-restaurant/img/contact.de040159793fa1e40e78.png);
+}
+
+/* booking */
+
+.block__form {
+    margin-inline: auto;
+    max-width: 450px;
+    padding: 50px 15px;
+}
+
+.block__title {
+    font: 700 32px/1 var(--pts);
+    color: var(--color-black);
+    margin-bottom: 50px;
+}
+
+.block-contacts__address_gap {
+    gap: 20px;
+}
+
+.input {
+    width: 325px;
+    margin: 25px 0;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.guests {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    font-size: 0.8em;
+}
+
+.form-element {
+    display: flex;
+    align-items: center;
+    color: #B2B2B2;
+}
+
+#datetimepicker {
+    width: 115px;
+    margin: 0 5px;
+    border: none;
+}
+
+#num-guests {
+    border: none;
+    display: inline;
+    width: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+#num-guests-inc {
+    margin-right: 7px;
+}
+
+/* Календарь */
+#calendar {
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    z-index: 9999;
+    display: none;
+    width: 30vw;
+    background: white;
+    border: 1px solid darkgray;
+    padding: 10px 5px 20px;
+    transform: translate(-50%, -50%);
+}
+
+.calendar_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#calendar .close {
+    display: inline;
+    cursor: pointer;
+    margin: 5px 5px;
+    font-size: 1.5em;
+    font-weight: bolder;
+    text-align: end;
+}
+
+#calendar h2 {
+    margin: 10px 5px;
+}
+
+#calendar h3 {
+    margin: 5px 0;
+}
+
+#calendar .day-selector {
+    width: 100%;
+}
+
+#calendar .day-selector th div {
+    padding: 7px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#calendar .day-selector th div {
+    background: #c41414;
+    color: white;
+    border-radius: calc(1em + 5px);
+}
+
+#calendar .day-selector td,
+#calendar .day-selector th {
+    text-align: center;
+    padding: 5px;
+}
+
+#calendar .day-selector td div {
+    padding: 7px;
+    font-weight: bold;
+    color: gray;
+    display: inline-block;
+}
+
+#calendar .day-selector td .selected {
+    background: #222B45;
+    color: white;
+    border-radius: calc(1em + 5px);
+}
+
+#calendar .day-selector td .disabled {
+    color: lightgray;
+}
+
+#calendar .time-selector,
+#calendar .month-selector {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#calendar .time-selector button,
+#calendar .month-selector button {
+    width: 30%;
+    margin: 3px;
+    font-size: 1.1em;
+    font-weight: bolder;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: #F1F3F8;
+    color: #8B9CB3;
+}
+
+#calendar .month-selector button {
+    border: none;
+    background: none;
+    color: #8B9CB3;
+}
+
+#calendar .time-selector button.occupied {
+    visibility: hidden;
+}
+
+#calendar .time-selector button.selected {
+    background: #222B45;
+    color: white;
+}
+
+#calendar .month-selector button.selected {
+    border: none;
+    border-radius: calc(0.55em + 1px);
+    background: #222B45;
+    color: white;
+}
+
+/* image__map */
+
+.info__map {
+    aspect-ratio: 474 / 305;
+    background-image: url(/electica-restaurant/img/map.5731f27dfeb7eb252d76.png);
+}
+
+@media (max-width: 770px) {
+    .info {
+        margin-top: 62px;
+    }
+
+    .info form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5%;
+    }
+
+    .block__form {
+        max-width: 100%;
+    }
+
+    .input {
+        width: 50%;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .info__map {
+        order: 3;
+    }
+
+    .info__contacts {
+        order: 4;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .layout {
+        grid-template-rows: none;
+    }
+
+    .info {
+        margin-top: 0;
+    }
+
+    .info__pic {
+        aspect-ratio: 105 / 89;
+    }
+
+    .block__title {
+        font: 700 22px/1 var(--pts);
+    }
+
+    .guests {
+        flex-direction: column;
+        gap: 25px;
+        width: 50%;
+    }
+
+    #datetimepicker {
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px solid var(--color-black);
+    }
+
+    #calendar {
+        position: fixed;
+        /* inset: 0; */
+        /* top:0 right:0 bottom:0 left:0 */
+        z-index: 9999;
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        border: none;
+        padding: 20px 15px;
+        animation: slideUp 0.25s ease-out;
+    }
+
+    body.calendar-open {
+        overflow: hidden;
+        touch-action: none;
+    }
+}

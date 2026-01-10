@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 
 module.exports = {
@@ -27,10 +28,16 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|svg|ico)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'img/[name].[hash][ext]'
+        }
       },
       {
         test: /\.(woff|woff2|ttf|eot)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name].[hash][ext]'
+        }
       },
       {
         test: /\.js$/,
@@ -38,8 +45,24 @@ module.exports = {
         type: 'javascript/auto',
         use: 'babel-loader',
       }
-
     ],
+  },
+
+  optimization: {
+    minimizer: [
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            plugins: [
+              ['mozjpeg', { quality: 80 }],      // JPEG 
+              ['pngquant', { quality: [0.7, 0.9] }], // PNG 
+              ['svgo', { name: 'preset-default' }] // SVG
+            ]
+          }
+        }
+      })
+    ]
   },
 
   plugins: [
@@ -76,7 +99,7 @@ module.exports = {
 
   devServer: {
     static: [
-      './dist',
+      './docs',
       './public'
     ],
     open: true,

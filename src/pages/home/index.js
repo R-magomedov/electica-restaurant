@@ -8,9 +8,11 @@ $(function () {
   burgerToggle();
   initReviews()
   // переключение слайдов в галерее------------------
+
   $('.rightArrow').on('click', function () {
     $('.gallery').removeClass('about').addClass('values');
   })
+
 
   $('.leftArrow').on('click', function () {
     $('.gallery').removeClass('values').addClass('about');

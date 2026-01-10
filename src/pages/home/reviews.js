@@ -2,6 +2,7 @@ import reviewIgor from '../../assets/reviews/reviewIgor.png';
 import reviewMarina from '../../assets/reviews/reviewMarina.png';
 import reviewAleksandr from '../../assets/reviews/reviewAleksandr.png';
 import reviewNatalya from '../../assets/reviews/reviewNatalya.png';
+const starIcon = './svg/star.svg';
 
 // Массив с данными отзывов
 const reviewsData = [
@@ -42,7 +43,6 @@ export function initReviews() {
         reviewCard.querySelector('.reviews__text').textContent = reviewInfo.text;
         
         const starsContainer = reviewCard.querySelector('.reviews__starts');
-        const starIcon = '/svg/star.svg';
 
         for (let i = 0; i < reviewInfo.rating; i++) {
             let star = document.createElement('img');

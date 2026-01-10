@@ -1,0 +1,574 @@
+/* Акция */
+.offer {
+    position: fixed;
+    top: 2vh;
+    left: 50%;
+    z-index: 999;
+    display: none;
+    height: 90vh;
+    aspect-ratio: 625 / 785;
+    background-color: white;
+    text-align: center;
+    transform: translateX(-50%);
+}
+
+.offer_pic {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 625/350;
+    background-image: url(/src/assets/img/specialOffer.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.offer_body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    align-items: center;
+    gap: 4vh;
+    padding: 2vh calc((77 / 1920) * 100%);
+}
+
+.offer_title {
+    color: var(--color-black);
+    font: 700 2em/1 var(--bn);
+    text-align: center;
+}
+
+.offer_text {
+    color: var(--color-black);
+    font: 500 14px/120% var(--pts);
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font: 700 1.5em/1 cursive;
+    text-align: right;
+    color: gray;
+    cursor: pointer;
+}
+
+#offer_open {
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    z-index: 999;
+    width: calc(177 / 1920 * 100vw);
+    aspect-ratio: 1/1;
+    /* height: calc(177 / 1920 * 100vw); */
+    border-radius: 50%;
+    background-color: var(--color-orange);
+    border: 0 solid var(--color-orange);
+    font: 700 22px/1 var(--bn);
+    text-transform: uppercase;
+    color: var(--color-white);
+    transition: all 0.2s ease;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+}
+
+#offer_open:hover {
+    background-color: #EB7F4C;
+}
+
+.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+
+/* intro */
+
+.intro {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 43px;
+    width: 100%;
+    background-image: url(../assets/img/home-bckg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.intro::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    content: '';
+}
+
+.intro__wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 199px;
+    max-width: 777px;
+    /* font: 400 96px/1 var(--bn); */
+    color: var(--color-white);
+    text-align: center;
+}
+
+.intro__title {
+    font: 400 96px/1 var(--bn);
+    /* color: var(--color-white);
+    text-align: center; */
+}
+
+@media (max-width: 768px) {
+
+    .intro__title {
+        font: 400 5em/1 var(--bn);
+    }
+
+    .intro__wrapper {
+        padding-top: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .intro::before {
+        background: 0;
+    }
+
+    .intro {
+        align-items: flex-start;
+        background-image: url(/src/assets/img/page-bckg.png);
+        padding-inline: 5.5vw;
+        gap: 113px;
+    }
+
+    .intro__title {
+        text-align: left;
+        font: 700 35px/1 var(--bn);
+    }
+
+    .offer {
+        position: fixed;
+        inset: 0;
+        /* top:0 right:0 bottom:0 left:0 */
+        z-index: 9999;
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        border: none;
+        animation: slideUp 0.3s ease-out;
+        transform: none;
+    }
+
+    .offer_text {
+        font: 500 15px/120% var(--pts);
+    }
+
+    body.no-scroll {
+        overflow: hidden;
+        touch-action: none;
+    }
+
+    .offer_title {
+        position: absolute;
+        top: 100px;
+        color: var(--color-white);
+    }
+
+    .offer .darkening {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .dark {
+        padding-top: calc((100% / 625 * 350) * 1);
+    }
+}
+
+
+/* Gallery */
+
+.gallery__pic {
+    /* width: 50vw; */
+    height: 100%;
+    background-size: cover;
+}
+
+.gallery__text {
+    /* width: 50vw; */
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    padding: 5%;
+    background-color: var(--color-white);
+}
+
+#rightArrow {
+    transform: rotate(180deg);
+    margin-left: 40px;
+}
+
+.gallery .mob {
+    display: none;
+    height: 90%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.gallery .mob img {
+    height: 28px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    outline: 2px solid #e5e4e4;
+    background-color: #cecccb;
+    opacity: 1;
+    cursor: pointer;
+    /* transform: scale(1); */
+    transition: all ease 0.5s;
+}
+
+.about .mob .leftArrow,
+.values .mob .rightArrow {
+    opacity: 0.6;
+    cursor: default;
+}
+
+
+
+.about .dsk .leftArrow,
+.values .dsk .rightArrow {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.about .dsk .rightArrow,
+.values .dsk .leftArrow {
+    cursor: pointer;
+    transition: transform ease 0.5s;
+}
+
+.rightArrow {
+    transform: rotate(180deg);
+    margin-left: calc(85px - 2 * 17px);
+}
+
+.about .rightArrow:active {
+    transform: rotate(180deg) scale(1.25);
+}
+
+.values .leftArrow:active {
+    transform: scale(1.25);
+}
+
+.about h3::after {
+    content: "О нас";
+}
+
+.about p::after {
+    content: "Ресторан «Эклектика» — это место, где сочетаются утонченный вкус и теплая атмосфера. Наши шеф-повара тщательно подбирают ингредиенты и создают блюда с любовью к каждому клиенту.\A\A«Эклектика» предлагает уютные залы для семейных ужинов, романтических свиданий и деловых обедов. Мы ценим ваше время и комфорт, поэтому обеспечиваем высокий уровень сервиса.\A\AДобро пожаловать в мир великолепных вкусов и неповторимых воспоминаний."
+}
+
+.about .gallery__pic {
+    background-image: url(/src/assets/gallery/gallery_about.png);
+}
+
+.values h3::after {
+    content: "Наши ценности";
+}
+
+.values p::after {
+    content: "«Эклектика» — это уютное место, где каждый гость становится частью нашей семьи. Мы гордимся тем, что создали атмосферу, в которой сочетается элегантность и теплота, а меню предлагает богатство вкусов, подчеркивая лучшие кулинарные традиции мира.\A\AРесторан «Эклектика» — это не просто еще одно место для обеда. Это место, где сливаются воедино стиль, вкус и теплота, создавая неповторимый опыт для тех, кто ценит настоящую гастрономию."
+}
+
+.values .gallery__pic {
+    background-image: url(/src/assets/gallery/gallery_values.png);
+}
+
+@media (max-width: 768px) {
+    .gallery .dsk {
+        display: none;
+    }
+
+    .gallery .mob {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-rows: 360px 1fr;
+    }
+}
+
+
+/* reviews */
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    background-image: url(/src/assets/img/page-bckg.png);
+}
+
+.reviews__title {
+    padding-left: 13.5vw;
+    padding-top: 5.8rem;
+    color: var(--color-white);
+}
+
+#reviews__carousel {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 166px 6vw;
+    padding-top: 35px;
+}
+
+#rightReviewArrow,
+#leftReviewArrow {
+    width: 4vw;
+    cursor: pointer;
+}
+
+#leftReviewArrow {
+    transform: rotate(180deg) !important;
+}
+
+.inactive {
+    opacity: 0.3;
+    cursor: default !important;
+}
+
+.reviews__conteiner {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: stretch;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    margin: 0 100px;
+    background-color: transparent;
+
+}
+
+.reviews__card {
+    display: grid;
+    grid-template-columns: 10vmax 1fr;
+    grid-template: "p n"
+        "p r"
+        "t t";
+    grid-gap: 30px;
+    width: calc(40vw - 65px);
+    padding: 2vw;
+    background-color: var(--color-white);
+}
+
+.reviews__photo {
+    width: 10vmax;
+    border-radius: 5vmax;
+    grid-area: p;
+}
+
+.reviews__name {
+    grid-area: n;
+    font: 700 1.5rem/1 var(--pts);
+}
+
+.reviews__starts {
+    grid-area: r;
+    display: grid;
+    grid-template-columns: 34px 34px 34px 34px 34px;
+}
+
+.reviews__text {
+    grid-area: t;
+    font: 400 1.12rem/1.2 var(--pts);
+}
+
+#showMore {
+    display: none;
+}
+
+@media (max-width: 1240px) {
+    .reviews__conteiner {
+        flex-direction: column;
+    }
+
+    .reviews__card {
+        width: 100%;
+        grid-template: "p"
+            "r"
+            "n"
+            "t";
+    }
+
+    .reviews__photo,
+    .reviews__starts,
+    .reviews__name {
+        margin: 0 auto;
+    }
+
+    .reviews__conteiner {
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews__card {
+        width: 80vw;
+        transition:
+            opacity 0.6s ease,
+            transform 0.6s ease,
+            max-height 0.6s ease,
+            margin 0.6s ease;
+    }
+
+    /* скрытые карточки при свернутом контейнере */
+    .reviews--collapsed .reviews__card:not(:first-child) {
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+
+        max-height: 0;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;   
+        
+    }
+
+    /* развёрнутое состояние */
+    .reviews__card:not(:first-child) {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+
+        max-height: 1000px;
+        margin: initial;
+        overflow: visible;           
+    }
+
+
+
+    .reviews__conteiner {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    #leftReviewArrow,
+    #rightReviewArrow {
+        display: none;
+    }
+
+    .reviews {
+        align-items: center;
+    }
+
+    .reviews__title {
+        padding-left: 0;
+    }
+
+    #showMore {
+        display: block;
+        margin: 20px 0;
+        /* margin-left: 28vw; */
+        width: 204px;
+        height: 55px;
+        border-radius: 100px;
+        background: none;
+        border: 2px solid white;
+        color: var(--color-white);
+        font-family: PT Sans;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 23px;
+        letter-spacing: 0em;
+    }
+
+    #showMore:active {
+        background-color: var(--color-white);
+        color: var(--color-black);
+    }
+
+    #reviews__carousel {
+        padding: 5vw;
+    }
+}
+
+@media (max-width: 480px) {
+
+    
+    .reviews__card {
+        padding: 3vh;
+        width: 90vw;
+    }
+
+}
+
+/* contact */
+
+.contact__pic {
+    background-image: url(/src/assets/gallery/contact.png);
+    background-size: cover;
+}
+
+.contact__block {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 100px;
+    background-color: var(--color-white);
+}
+
+
+.contact__form {
+    margin-block: 150px;
+    max-width: 400px;
+    padding-left: 5%;
+}
+
+.address_gap {
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 1024px) {
+    .contact__block {
+        padding: 5%;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .contact__block {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 5%;
+        text-align: center;
+    }
+
+    .contact__form {
+        margin-block: 0;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact__form {
+        padding-left: 0;
+    }
+
+}

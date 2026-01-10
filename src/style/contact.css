@@ -1,0 +1,287 @@
+/* Стили для фоновых картинок */
+.bgr {
+    background-size: cover;
+    background-position: center;
+}
+
+/* main */
+
+.info {
+    margin-top: 100px;
+    background-color: #000000;
+}
+
+/* Image */
+.info__pic {
+    aspect-ratio: 83 / 89;
+    background-image: url(../assets/gallery/contact/contact.png);
+}
+
+/* booking */
+
+.block__form {
+    margin-inline: auto;
+    max-width: 450px;
+    padding: 50px 15px;
+}
+
+.block__title {
+    font: 700 32px/1 var(--pts);
+    color: var(--color-black);
+    margin-bottom: 50px;
+}
+
+.block-contacts__address_gap {
+    gap: 20px;
+}
+
+.input {
+    width: 325px;
+    margin: 25px 0;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.guests {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    font-size: 0.8em;
+}
+
+.form-element {
+    display: flex;
+    align-items: center;
+    color: #B2B2B2;
+}
+
+#datetimepicker {
+    width: 115px;
+    margin: 0 5px;
+    border: none;
+}
+
+#num-guests {
+    border: none;
+    display: inline;
+    width: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+#num-guests-inc {
+    margin-right: 7px;
+}
+
+/* Календарь */
+#calendar {
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    z-index: 9999;
+    display: none;
+    width: 30vw;
+    background: white;
+    border: 1px solid darkgray;
+    padding: 10px 5px 20px;
+    transform: translate(-50%, -50%);
+}
+
+.calendar_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#calendar .close {
+    display: inline;
+    cursor: pointer;
+    margin: 5px 5px;
+    font-size: 1.5em;
+    font-weight: bolder;
+    text-align: end;
+}
+
+#calendar h2 {
+    margin: 10px 5px;
+}
+
+#calendar h3 {
+    margin: 5px 0;
+}
+
+#calendar .day-selector {
+    width: 100%;
+}
+
+#calendar .day-selector th div {
+    padding: 7px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#calendar .day-selector th div {
+    background: #c41414;
+    color: white;
+    border-radius: calc(1em + 5px);
+}
+
+#calendar .day-selector td,
+#calendar .day-selector th {
+    text-align: center;
+    padding: 5px;
+}
+
+#calendar .day-selector td div {
+    padding: 7px;
+    font-weight: bold;
+    color: gray;
+    display: inline-block;
+}
+
+#calendar .day-selector td .selected {
+    background: #222B45;
+    color: white;
+    border-radius: calc(1em + 5px);
+}
+
+#calendar .day-selector td .disabled {
+    color: lightgray;
+}
+
+#calendar .time-selector,
+#calendar .month-selector {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#calendar .time-selector button,
+#calendar .month-selector button {
+    width: 30%;
+    margin: 3px;
+    font-size: 1.1em;
+    font-weight: bolder;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: #F1F3F8;
+    color: #8B9CB3;
+}
+
+#calendar .month-selector button {
+    border: none;
+    background: none;
+    color: #8B9CB3;
+}
+
+#calendar .time-selector button.occupied {
+    visibility: hidden;
+}
+
+#calendar .time-selector button.selected {
+    background: #222B45;
+    color: white;
+}
+
+#calendar .month-selector button.selected {
+    border: none;
+    border-radius: calc(0.55em + 1px);
+    background: #222B45;
+    color: white;
+}
+
+/* image__map */
+
+.info__map {
+    aspect-ratio: 474 / 305;
+    background-image: url(../assets/gallery/contact/map.png);
+}
+
+@media (max-width: 770px) {
+    .info {
+        margin-top: 62px;
+    }
+
+    .info form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5%;
+    }
+
+    .block__form {
+        max-width: 100%;
+    }
+
+    .input {
+        width: 50%;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .info__map {
+        order: 3;
+    }
+
+    .info__contacts {
+        order: 4;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .layout {
+        grid-template-rows: none;
+    }
+
+    .info {
+        margin-top: 0;
+    }
+
+    .info__pic {
+        aspect-ratio: 105 / 89;
+    }
+
+    .block__title {
+        font: 700 22px/1 var(--pts);
+    }
+
+    .guests {
+        flex-direction: column;
+        gap: 25px;
+        width: 50%;
+    }
+
+    #datetimepicker {
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px solid var(--color-black);
+    }
+
+    #calendar {
+        position: fixed;
+        /* inset: 0; */
+        /* top:0 right:0 bottom:0 left:0 */
+        z-index: 9999;
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        border: none;
+        padding: 20px 15px;
+        animation: slideUp 0.25s ease-out;
+    }
+
+    body.calendar-open {
+        overflow: hidden;
+        touch-action: none;
+    }
+}

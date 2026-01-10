@@ -1,0 +1,204 @@
+.body {
+    background: url(/src/assets/img/page-bckg.png);
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+.menu {
+    position: relative;
+    margin-top: 100px;
+    padding-top: 25px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 102px;
+}
+
+.menu__category {
+    display: flex;
+    gap: 10px;
+}
+
+.menu__category-link {
+    padding: 10px 32px;
+    background-color: transparent;
+    border: 2px solid var(--color-white);
+    border-radius: 10px;
+    font: 700 20px/1 var(--pts);
+    color: var(--color-white);
+    transition: all 0.2s ease;
+}
+.menu__category-link[aria-disabled="true"] {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    pointer-events: none;
+}
+
+.menu .button_medium {
+    position: fixed;
+    top: 140px;
+    right: 0;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    text-align: left;
+  }
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    column-gap: 55px;
+    row-gap: 65px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+}
+
+.card-img {
+    margin-bottom: 26px;
+}
+
+.card__text {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex: 1;
+    margin-inline: 45px;
+    margin-bottom: 51px;
+}
+
+.card__name {
+    font: 700 24px/110% var(--pts);
+    color: var(--color-black);
+    margin-left: 4px;
+}
+
+.card__price {
+    font: 700 28px/1 var(--pts);
+    color: var(--color-black);
+}
+
+.card__price::after {
+    content: "₽";;
+}
+
+.button_menu {
+    width: 90%;
+    padding: 22px 0px;
+    margin-bottom: 28px;
+    margin-inline: 18px;
+    text-align: center;
+    cursor: pointer;
+}
+/* Всплывающее окно "Подробнее" */
+
+#detailsWindow {
+    position: fixed;
+    top: 20vh;
+    z-index: 2;
+    display: none;
+    margin: 0 35vw;
+    padding: 30px;
+    background-color: white;
+    border: 3px solid darkgray;
+    border-radius: 10px;
+}
+
+#detailsClose {
+    font-size: 2.5em;
+    text-align: right;
+    cursor: pointer;
+}
+
+#detailsTitle {
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+#detailsKcal {
+    color: gray;
+    margin: 10px 0;
+}
+
+#detailsPrice {
+    font-size: 1.7em;
+    margin: 20px 0;
+    font-weight: bolder;
+}
+
+#detailsPrice::after {
+    content: " ₽";
+    font-size: 0.9em;
+}
+/* ------------ */
+
+@media (max-width: 770px) {
+
+    .menu {
+        margin-top: 62px;
+    }
+    .menu__category {
+        flex-direction: column;
+    }
+
+    .menu .button_medium {
+        position: static;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu__category-link {
+        padding: 8px 26px;
+        font: 700 16px/1 var(--pts);
+    }
+
+    .top {
+        margin-bottom: 42px;
+    }
+
+    .menu .button_medium {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: min-content;
+        aspect-ratio: 1 / 1;
+        padding: 10px 15px;
+        border-radius: 50%;
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .card__text {
+        margin-inline: 30px;
+    }
+
+    .card__name {
+        font: 700 18px/100% var(--pts);
+    }
+
+    .card__price {
+        font: 700 20px/1 var(--pts);
+    }
+
+    #detailsWindow {
+        position: fixed;
+        inset: 0;
+        z-index: 2;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding-block: 35vw;
+        background-color: antiquewhite;
+    }
+
+    .content {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+}
+

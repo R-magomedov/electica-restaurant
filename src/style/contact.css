@@ -198,6 +198,18 @@
     color: white;
 }
 
+.input,
+#datetimepicker,
+#num-guests {
+    font-size: 16px;
+}
+
+input,
+select,
+textarea {
+    -webkit-appearance: none;
+}
+
 /* image__map */
 
 .info__map {
@@ -235,6 +247,15 @@
     .info__contacts {
         order: 4;
     }
+
+    #calendar {
+        position: fixed;
+        inset: 0;            
+        width: 100vw;
+        height: 100vh;
+        transform: none;       
+        overflow-y: auto;
+    }
 }
 
 @media (max-width: 480px) {
@@ -258,7 +279,11 @@
     .guests {
         flex-direction: column;
         gap: 25px;
-        width: 50%;
+        width: 90%;
+    }
+
+    .input {
+        width: 90%;
     }
 
     #datetimepicker {

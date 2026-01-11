@@ -532,6 +532,10 @@ nav {
     display: block;
   }
 
+  .button_small {
+    width: 100%;
+  }
+
   .buttons {
     margin-bottom: 60px;
     width: 100%;

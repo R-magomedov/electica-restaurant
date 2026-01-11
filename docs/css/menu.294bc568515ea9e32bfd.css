@@ -533,6 +533,10 @@ nav {
     display: block;
   }
 
+  .button_small {
+    width: 100%;
+  }
+
   .buttons {
     margin-bottom: 60px;
     width: 100%;
@@ -561,290 +565,208 @@ nav {
     transform: translateY(0);
   }
 }
-/* Стили для фоновых картинок */
-.bgr {
+.body {
+    background: url(/electica-restaurant/img/page-bckg.5a1c9fd40557fc6efb8f.png);
     background-size: cover;
-    background-position: center;
+    background-repeat: repeat;
 }
 
-/* main */
-
-.info {
+.menu {
+    position: relative;
     margin-top: 100px;
-    background-color: #000000;
+    padding-top: 25px;
 }
 
-/* Image */
-.info__pic {
-    aspect-ratio: 83 / 89;
-    background-image: url(/electica-restaurant/img/contact.de040159793fa1e40e78.png);
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 102px;
 }
 
-/* booking */
-
-.block__form {
-    margin-inline: auto;
-    max-width: 450px;
-    padding: 50px 15px;
+.menu__category {
+    display: flex;
+    gap: 10px;
 }
 
-.block__title {
-    font: 700 32px/1 var(--pts);
+.menu__category-link {
+    padding: 10px 32px;
+    background-color: transparent;
+    border: 2px solid var(--color-white);
+    border-radius: 10px;
+    font: 700 20px/1 var(--pts);
+    color: var(--color-white);
+    transition: all 0.2s ease;
+}
+.menu__category-link[aria-disabled="true"] {
+    background-color: var(--color-white);
     color: var(--color-black);
-    margin-bottom: 50px;
+    pointer-events: none;
 }
 
-.block-contacts__address_gap {
-    gap: 20px;
+.menu .button_medium {
+    position: fixed;
+    top: 140px;
+    right: 0;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    text-align: left;
+  }
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    column-gap: 55px;
+    row-gap: 65px;
 }
 
-.input {
-    width: 325px;
-    margin: 25px 0;
-    padding-bottom: 10px;
-    border: none;
-    border-bottom: 1px solid #000000;
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
 }
 
-.input:focus {
-    outline: none;
+.card-img {
+    margin-bottom: 26px;
 }
 
-.guests {
+.card__text {
     display: flex;
     justify-content: space-between;
-    width: 350px;
-    font-size: 0.8em;
+    gap: 15px;
+    flex: 1;
+    margin-inline: 45px;
+    margin-bottom: 51px;
 }
 
-.form-element {
-    display: flex;
-    align-items: center;
-    color: #B2B2B2;
+.card__name {
+    font: 700 24px/110% var(--pts);
+    color: var(--color-black);
+    margin-left: 4px;
 }
 
-#datetimepicker {
-    width: 115px;
-    margin: 0 5px;
-    border: none;
+.card__price {
+    font: 700 28px/1 var(--pts);
+    color: var(--color-black);
 }
 
-#num-guests {
-    border: none;
-    display: inline;
-    width: 20px;
+.card__price::after {
+    content: "₽";;
+}
+
+.button_menu {
+    width: 90%;
+    padding: 22px 0px;
+    margin-bottom: 28px;
+    margin-inline: 18px;
     text-align: center;
-    margin: 0;
-}
-
-#num-guests-inc {
-    margin-right: 7px;
-}
-
-/* Календарь */
-#calendar {
-    position: absolute;
-    top: 50vh;
-    left: 50%;
-    z-index: 9999;
-    display: none;
-    width: 30vw;
-    background: white;
-    border: 1px solid darkgray;
-    padding: 10px 5px 20px;
-    transform: translate(-50%, -50%);
-}
-
-.calendar_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-#calendar .close {
-    display: inline;
     cursor: pointer;
-    margin: 5px 5px;
+}
+/* Всплывающее окно "Подробнее" */
+
+#detailsWindow {
+    position: fixed;
+    top: 20vh;
+    z-index: 2;
+    display: none;
+    margin: 0 35vw;
+    padding: 30px;
+    background-color: white;
+    border: 3px solid darkgray;
+    border-radius: 10px;
+}
+
+#detailsClose {
+    font-size: 2.5em;
+    text-align: right;
+    cursor: pointer;
+}
+
+#detailsTitle {
     font-size: 1.5em;
     font-weight: bolder;
-    text-align: end;
 }
 
-#calendar h2 {
-    margin: 10px 5px;
-}
-
-#calendar h3 {
-    margin: 5px 0;
-}
-
-#calendar .day-selector {
-    width: 100%;
-}
-
-#calendar .day-selector th div {
-    padding: 7px;
-    font-weight: bold;
-    display: inline-block;
-}
-
-#calendar .day-selector th div {
-    background: #c41414;
-    color: white;
-    border-radius: calc(1em + 5px);
-}
-
-#calendar .day-selector td,
-#calendar .day-selector th {
-    text-align: center;
-    padding: 5px;
-}
-
-#calendar .day-selector td div {
-    padding: 7px;
-    font-weight: bold;
+#detailsKcal {
     color: gray;
-    display: inline-block;
+    margin: 10px 0;
 }
 
-#calendar .day-selector td .selected {
-    background: #222B45;
-    color: white;
-    border-radius: calc(1em + 5px);
-}
-
-#calendar .day-selector td .disabled {
-    color: lightgray;
-}
-
-#calendar .time-selector,
-#calendar .month-selector {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-#calendar .time-selector button,
-#calendar .month-selector button {
-    width: 30%;
-    margin: 3px;
-    font-size: 1.1em;
+#detailsPrice {
+    font-size: 1.7em;
+    margin: 20px 0;
     font-weight: bolder;
-    padding: 10px 5px;
-    border-radius: 10px;
-    border: none;
-    background-color: #F1F3F8;
-    color: #8B9CB3;
 }
 
-#calendar .month-selector button {
-    border: none;
-    background: none;
-    color: #8B9CB3;
+#detailsPrice::after {
+    content: " ₽";
+    font-size: 0.9em;
 }
-
-#calendar .time-selector button.occupied {
-    visibility: hidden;
-}
-
-#calendar .time-selector button.selected {
-    background: #222B45;
-    color: white;
-}
-
-#calendar .month-selector button.selected {
-    border: none;
-    border-radius: calc(0.55em + 1px);
-    background: #222B45;
-    color: white;
-}
-
-/* image__map */
-
-.info__map {
-    aspect-ratio: 474 / 305;
-    background-image: url(/electica-restaurant/img/map.5731f27dfeb7eb252d76.png);
-}
+/* ------------ */
 
 @media (max-width: 770px) {
-    .info {
+
+    .menu {
         margin-top: 62px;
     }
-
-    .info form {
-        display: flex;
+    .menu__category {
         flex-direction: column;
-        margin-top: 5%;
     }
 
-    .block__form {
-        max-width: 100%;
-    }
-
-    .input {
-        width: 50%;
-    }
-
-    .layout {
-        grid-template-columns: 1fr;
-    }
-
-    .info__map {
-        order: 3;
-    }
-
-    .info__contacts {
-        order: 4;
+    .menu .button_medium {
+        position: static;
     }
 }
 
 @media (max-width: 480px) {
-
-    .layout {
-        grid-template-rows: none;
+    .menu__category-link {
+        padding: 8px 26px;
+        font: 700 16px/1 var(--pts);
     }
 
-    .info {
-        margin-top: 0;
+    .top {
+        margin-bottom: 42px;
     }
 
-    .info__pic {
-        aspect-ratio: 105 / 89;
+    .menu .button_medium {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: min-content;
+        aspect-ratio: 1 / 1;
+        padding: 10px 15px;
+        border-radius: 50%;
+        font-size: 1em;
+        text-align: center;
     }
 
-    .block__title {
-        font: 700 22px/1 var(--pts);
+    .card__text {
+        margin-inline: 30px;
     }
 
-    .guests {
-        flex-direction: column;
-        gap: 25px;
-        width: 50%;
+    .card__name {
+        font: 700 18px/100% var(--pts);
     }
 
-    #datetimepicker {
-        margin: 0;
-        width: 100%;
-        border-bottom: 1px solid var(--color-black);
+    .card__price {
+        font: 700 20px/1 var(--pts);
     }
 
-    #calendar {
+    #detailsWindow {
         position: fixed;
         inset: 0;
-        transform: none;
-        z-index: 9999;
-        width: 100%;
+        z-index: 2;
+        width: 100vw;
         height: 100vh;
-        overflow-y: auto;
-        border: none;
-        padding: 20px 15px;
-        animation: slideUp 0.25s ease-out;
+        margin: 0;
+        padding-block: 35vw;
+        background-color: antiquewhite;
     }
 
-    body.calendar-open {
-        overflow: hidden;
-        touch-action: none;
+    .content {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
+
 }
+
+

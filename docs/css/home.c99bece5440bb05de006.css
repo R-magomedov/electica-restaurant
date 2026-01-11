@@ -533,6 +533,10 @@ nav {
     display: block;
   }
 
+  .button_small {
+    width: 100%;
+  }
+
   .buttons {
     margin-bottom: 60px;
     width: 100%;
@@ -610,9 +614,9 @@ nav {
     position: absolute;
     top: 20px;
     right: 20px;
-    font: 700 1.5em/1 cursive;
+    font: 700 24px/1 var(--bn);
     text-align: right;
-    color: gray;
+    color: var(--color-white);
     cursor: pointer;
 }
 
@@ -733,8 +737,17 @@ nav {
         transform: none;
     }
 
+    .offer_pic {
+        aspect-ratio: 16 / 9;  
+      }
+
+    .offer_body {
+        gap: 4vh;
+        padding: 1rem;
+    }
+
     .offer_text {
-        font: 500 15px/120% var(--pts);
+        font: 500 16px/120% var(--pts);
     }
 
     body.no-scroll {

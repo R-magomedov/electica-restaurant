@@ -5,18 +5,18 @@ import main4 from '../../assets/gallery/menu/m/4.png';
 import main5 from '../../assets/gallery/menu/m/5.png';
 import main6 from '../../assets/gallery/menu/m/6.png';
 
-import des1 from '../../assets/gallery/menu/s/1.png';
-import des2 from '../../assets/gallery/menu/s/2.png';
-import des3 from '../../assets/gallery/menu/s/3.png';
-import des4 from '../../assets/gallery/menu/s/4.png';
-import des5 from '../../assets/gallery/menu/s/5.png';
-import des6 from '../../assets/gallery/menu/s/6.png';
+import salad1 from '../../assets/gallery/menu/s/1.png';
+import salad2 from '../../assets/gallery/menu/s/2.png';
+import salad3 from '../../assets/gallery/menu/s/3.png';
+import salad4 from '../../assets/gallery/menu/s/4.png';
+import salad5 from '../../assets/gallery/menu/s/5.png';
+import salad6 from '../../assets/gallery/menu/s/6.png';
 
-import salad1 from '../../assets/gallery/menu/d/14.png';
-import salad2 from '../../assets/gallery/menu/d/15.png';
-import salad3 from '../../assets/gallery/menu/d/16.png';
-import salad4 from '../../assets/gallery/menu/d/17.png';
-import salad5 from '../../assets/gallery/menu/d/33.png';
+import des1 from '../../assets/gallery/menu/d/14.png';
+import des2 from '../../assets/gallery/menu/d/15.png';
+import des3 from '../../assets/gallery/menu/d/16.png';
+import des4 from '../../assets/gallery/menu/d/17.png';
+import des5 from '../../assets/gallery/menu/d/33.png';
 
 export const menuData = {
   mainCourse: [
@@ -65,11 +65,11 @@ export const menuData = {
     },
   ],
 
-  salad: [
+  dessert: [
     {
       name: 'Тыквенное наслаждение',
       price: '500',
-      pic: salad1,
+      pic: des1,
       details:
         'Утонченный торт, гелато, эспрессо, пряные семечки и свежая земляника в гармонии в каждом кусочке.',
       kcal: '450',
@@ -77,7 +77,7 @@ export const menuData = {
     {
       name: 'Шоколадная симфония',
       price: '350',
-      pic: salad2,
+      pic: des2,
       details:
         'Насладитесь роскошью шоколадного оливкового торта, смешанного с нежным лавандовым семифреддо, карамелизированным медом и взбитым кремом с оливковым маслом.',
       kcal: '550',
@@ -85,7 +85,7 @@ export const menuData = {
     {
       name: 'Тарт с кешью и карамелью',
       price: '500',
-      pic: salad3,
+      pic: des3,
       details:
         'Роскошный тарт с кешью в карамельном масле, сопровождаемый свежестью цитрусового варенья, гелато с маслом из козьего молока и нежными маринованными кумкватами. В каждой порции - идеальное сочетание сладкого и освежающего.',
       kcal: '420',
@@ -93,7 +93,7 @@ export const menuData = {
     {
       name: 'Кокосовый крем-карамель с сливами и манго',
       price: '450',
-      pic: salad4,
+      pic: des4,
       details:
         'Нежный кокосовый крем-карамель, дополненный сочными сливами и ароматным манго, завершается карамелизованным кокосовым хрустом. Это блюдо - путешествие в тропический рай, где каждый вкус - настоящее наслаждение.',
       kcal: '380',
@@ -101,53 +101,53 @@ export const menuData = {
     {
       name: 'Жареное мороженое с мусом из свежих ягод',
       price: '400',
-      pic: salad5,
+      pic: des5,
       details:
         'Насладитесь уникальным десертом - жареным мороженым с мусом из свежих ягод, который мы создали для настоящих гурманов. Каждый кусочек хрустящей оболочки мороженого, сливается с ароматным мусом из отборных ягод, придают этому блюду невероятный вкусовой аккорд.',
       kcal: '380',
     },
   ],
 
-  dessert: [
+  salad: [
     {
       name: 'Индийские лепёшки с зелёным горошком в сливочном соусе',
       price: '750',
-      pic: des1,
+      pic: salad1,
       details: 'Детали про индийские лепёшки',
       kcal: '450',
     },
     {
       name: 'Жгучие грилль-перцы',
       price: '850',
-      pic: des2,
+      pic: salad2,
       details: 'Детали про жгучие грилль-перцы',
       kcal: '550',
     },
     {
       name: 'Греческий салат',
       price: '550',
-      pic: des3,
+      pic: salad3,
       details: 'Детали про греческий салат',
       kcal: '420',
     },
     {
       name: 'Брускетта с томатами и оливковым маслом',
       price: '450',
-      pic: des4,
+      pic: salad4,
       details: 'Детали про брускетту с томатами и оливковым маслом',
       kcal: '380',
     },
     {
       name: 'Морской коктейль',
       price: '850',
-      pic: des5,
+      pic: salad5,
       details: 'Детали про морской коктейль',
       kcal: '380',
     },
     {
       name: 'Сырные палочки из моцареллы с клюквенным соусом',
       price: '850',
-      pic: des6,
+      pic: salad6,
       details: 'Детали про сырные палочки из моцареллы с клюквенным соусом',
       kcal: '380',
     },

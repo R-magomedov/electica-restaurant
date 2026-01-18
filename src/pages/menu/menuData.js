@@ -65,7 +65,7 @@ export const menuData = {
     },
   ],
 
-  dessert: [
+  salad: [
     {
       name: 'Тыквенное наслаждение',
       price: '500',
@@ -108,7 +108,7 @@ export const menuData = {
     },
   ],
 
-  salad: [
+  dessert: [
     {
       name: 'Индийские лепёшки с зелёным горошком в сливочном соусе',
       price: '750',

@@ -50,24 +50,24 @@ var starIcon = './svg/star.svg';
 // Массив с данными отзывов
 var reviewsData = [{
   photo: reviewIgor_namespaceObject,
-  name: "Игорь Ковалев",
+  name: 'Игорь Ковалев',
   rating: 5,
-  text: "Провели здесь день рождения - атмосфера просто великолепная. Персонал веселый и отзывчивый, кухня порадовала. Особенно понравились закуски к пиву! Обязательно будем возвращаться, чтобы попробовать все блюда из меню."
+  text: 'Провели здесь день рождения - атмосфера просто великолепная. Персонал веселый и отзывчивый, кухня порадовала. Особенно понравились закуски к пиву! Обязательно будем возвращаться, чтобы попробовать все блюда из меню.'
 }, {
   photo: reviewMarina_namespaceObject,
-  name: "Марина Соколова",
+  name: 'Марина Соколова',
   rating: 4,
-  text: "Посетили семейный ресторан с подругами на девичнике, и это был наш лучший выбор! У нас был волшебный вечер - вкусная еда, отличные коктейли и веселая атмосфера. Обязательно вернемся сюда с мужьями! Очень рекомендую для дружеских посиделок и праздников."
+  text: 'Посетили семейный ресторан с подругами на девичнике, и это был наш лучший выбор! У нас был волшебный вечер - вкусная еда, отличные коктейли и веселая атмосфера. Обязательно вернемся сюда с мужьями! Очень рекомендую для дружеских посиделок и праздников.'
 }, {
   photo: reviewAleksandr_namespaceObject,
-  name: "Александр Петров",
+  name: 'Александр Петров',
   rating: 5,
-  text: "Этот ресторан - настоящая находка! Проводил здесь деловой ужин с партнерами, и все остались в восторге. Обслуживание на высшем уровне, персонал внимателен к каждой детали. Кухня порадовала своим разнообразием. Отличное место для деловых встреч и ужинов в уютной обстановке. Рекомендую!"
+  text: 'Этот ресторан - настоящая находка! Проводил здесь деловой ужин с партнерами, и все остались в восторге. Обслуживание на высшем уровне, персонал внимателен к каждой детали. Кухня порадовала своим разнообразием. Отличное место для деловых встреч и ужинов в уютной обстановке. Рекомендую!'
 }, {
   photo: reviewNatalya_namespaceObject,
-  name: "Наталья Иванова",
+  name: 'Наталья Иванова',
   rating: 5,
-  text: "Посетили семейный ресторан вместе с мужем и детьми - отличное место для семейного ужина! Обстановка очень уютная, а обслуживание выше всяких похвал. Наши дети в восторге от детского меню, которое оказалось не только вкусным, но и заботливо подготовленным с учетом детских предпочтений. Будем рекомендовать всем друзьям и обязательно вернемся."
+  text: 'Посетили семейный ресторан вместе с мужем и детьми - отличное место для семейного ужина! Обстановка очень уютная, а обслуживание выше всяких похвал. Наши дети в восторге от детского меню, которое оказалось не только вкусным, но и заботливо подготовленным с учетом детских предпочтений. Будем рекомендовать всем друзьям и обязательно вернемся.'
 }];
 function initReviews() {
   var reviewsContainer = document.getElementById('reviewsContainer');
@@ -117,14 +117,18 @@ $(function () {
   // переключение слайдов в отзывах------------------
 
   $('#rightReviewArrow').on('click', function (event) {
-    if (event.target.classList.contains('inactive')) return;
+    if (event.target.classList.contains('inactive')) {
+      return;
+    }
     var reviewsContainer = document.getElementById('reviewsContainer');
     var cardWidth = reviewsContainer.querySelector('.reviews__card').offsetWidth;
     reviewsContainer.scrollLeft += cardWidth + 30;
     $('#leftReviewArrow').removeClass('inactive');
   });
   $('#leftReviewArrow').on('click', function (event) {
-    if (event.target.classList.contains('inactive')) return;
+    if (event.target.classList.contains('inactive')) {
+      return;
+    }
     var reviewsContainer = document.getElementById('reviewsContainer');
     var cardWidth = reviewsContainer.querySelector('.reviews__card').offsetWidth;
     reviewsContainer.scrollLeft -= cardWidth + 30;
@@ -139,8 +143,8 @@ $(function () {
   var lastCard = reviewsContainer.lastElementChild;
   var options = {
     root: reviewsContainer,
-    rootMargin: "0px",
-    scrollMargin: "0px",
+    rootMargin: '0px',
+    scrollMargin: '0px',
     threshold: 0.3
   };
   var callback = function callback(entries) {

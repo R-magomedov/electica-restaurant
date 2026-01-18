@@ -43,10 +43,10 @@ $(function () {
 
   // Всплывающий календарь
   /***************************
-  * НАЗВАНИЯ МЕСЯЦЕВ
-  * Используются для кнопок сверху календаря
-  ***************************/
-  var monthNames = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+   * НАЗВАНИЯ МЕСЯЦЕВ
+   * Используются для кнопок сверху календаря
+   ***************************/
+  var monthNames = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
 
   /***************************
    * СЕГОДНЯШНЯЯ ДАТА
@@ -63,7 +63,7 @@ $(function () {
    * 0 — текущий месяц
    * 1 — следующий
    * 2 — через месяц
-   * 
+   *
    * → функция возвращает список дней с нужными флагами
    *************************************************/
   function makeCalendar(monthIndex) {
@@ -131,7 +131,7 @@ $(function () {
       button.dataset['monthIndex'] = monthIndex;
 
       // Первый месяц делаем активным
-      if (monthIndex == 0) {
+      if (monthIndex === 0) {
         button.classList.add('selected');
       }
       $('#calendar .month-selector').append(button);
@@ -153,17 +153,17 @@ $(function () {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
         var day = _step.value;
         // Классы для дня
-        var classNames = day.disabled ? ["disabled"] : [];
+        var classNames = day.disabled ? ['disabled'] : [];
         if (day.isToday) {
           classNames.push('selected');
         }
-        var className = classNames.join(" ");
+        var className = classNames.join(' ');
 
         // Формируем HTML ячейку дня
         row.push("\n        <td>\n          <div class=\"".concat(className, "\"\n               data-year=\"").concat(day.year, "\"\n               data-month=\"").concat(day.month, "\"\n               data-day=\"").concat(day.day, "\">\n            ").concat(day.day, "\n          </div>\n        </td>\n      "));
 
         // Если конец недели — добавляем строку
-        if (day.weekDay == 6) {
+        if (day.weekDay === 6) {
           var rowHtml = '<tr>' + row.join('') + '</tr>';
           calendarDayContainer.append($(rowHtml));
           row = [];
@@ -258,7 +258,9 @@ $(function () {
     var cellDiv = cell.find('div');
 
     // Нельзя выбрать прошедшие даты
-    if (cellDiv.hasClass('disabled')) return;
+    if (cellDiv.hasClass('disabled')) {
+      return;
+    }
     $('#calendar .day-selector td .selected').removeClass('selected');
     cellDiv.addClass('selected');
 
@@ -268,8 +270,8 @@ $(function () {
     selectedYear = cellDiv.data('year');
 
     // Формируем строку даты
-    var dayString = String(selectedDay).padStart(2, "0");
-    var monthString = String(selectedMonth).padStart(2, "0");
+    var dayString = String(selectedDay).padStart(2, '0');
+    var monthString = String(selectedMonth).padStart(2, '0');
     var selectedDate = "".concat(dayString, ".").concat(monthString, ".").concat(selectedYear);
 
     // Загружаем время для выбранного дня
@@ -284,10 +286,10 @@ $(function () {
    *************************************************/
   $('#calendar .time-selector').on('click', 'button', function (event) {
     var button = $(event.target);
-    var dayString = String(selectedDay).padStart(2, "0");
-    var monthString = String(selectedMonth).padStart(2, "0");
+    var dayString = String(selectedDay).padStart(2, '0');
+    var monthString = String(selectedMonth).padStart(2, '0');
     var selectedDate = "".concat(dayString, ".").concat(monthString, ".").concat(selectedYear);
-    var selectedTime = button.data("time");
+    var selectedTime = button.data('time');
     $('#calendar .time-selector button.selected').removeClass('selected');
     button.addClass('selected');
 

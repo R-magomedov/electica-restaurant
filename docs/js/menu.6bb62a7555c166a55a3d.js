@@ -41,16 +41,6 @@ const _4_namespaceObject = __webpack_require__.p + "img/4.01a07f2547fabb6e38fd.p
 const _5_namespaceObject = __webpack_require__.p + "img/5.6999d10bb2c1e9a530bb.png";
 ;// ./src/assets/gallery/menu/m/6.png
 const _6_namespaceObject = __webpack_require__.p + "img/6.9aa3c81530effd8b37a9.png";
-;// ./src/assets/gallery/menu/d/17.png
-const _17_namespaceObject = __webpack_require__.p + "img/17.83178626a64de5242e89.png";
-;// ./src/assets/gallery/menu/d/16.png
-const _16_namespaceObject = __webpack_require__.p + "img/16.757548b01838fc7cc73b.png";
-;// ./src/assets/gallery/menu/d/15.png
-const _15_namespaceObject = __webpack_require__.p + "img/15.b978308309b599cd9a11.png";
-;// ./src/assets/gallery/menu/d/14.png
-const _14_namespaceObject = __webpack_require__.p + "img/14.dd754d06bf6e7441dd8d.png";
-;// ./src/assets/gallery/menu/d/33.png
-const _33_namespaceObject = __webpack_require__.p + "img/33.d7803a80cc61cf366e0c.png";
 ;// ./src/assets/gallery/menu/s/1.png
 const s_1_namespaceObject = __webpack_require__.p + "img/1.9fafc261718884f1ff39.png";
 ;// ./src/assets/gallery/menu/s/2.png
@@ -63,8 +53,17 @@ const s_4_namespaceObject = __webpack_require__.p + "img/4.0260db5f74f0d47a1f35.
 const s_5_namespaceObject = __webpack_require__.p + "img/5.a78a31bebc854af4a870.png";
 ;// ./src/assets/gallery/menu/s/6.png
 const s_6_namespaceObject = __webpack_require__.p + "img/6.482ea7ba905fa61923b8.png";
+;// ./src/assets/gallery/menu/d/14.png
+const _14_namespaceObject = __webpack_require__.p + "img/14.dd754d06bf6e7441dd8d.png";
+;// ./src/assets/gallery/menu/d/15.png
+const _15_namespaceObject = __webpack_require__.p + "img/15.b978308309b599cd9a11.png";
+;// ./src/assets/gallery/menu/d/16.png
+const _16_namespaceObject = __webpack_require__.p + "img/16.757548b01838fc7cc73b.png";
+;// ./src/assets/gallery/menu/d/17.png
+const _17_namespaceObject = __webpack_require__.p + "img/17.83178626a64de5242e89.png";
+;// ./src/assets/gallery/menu/d/33.png
+const _33_namespaceObject = __webpack_require__.p + "img/33.d7803a80cc61cf366e0c.png";
 ;// ./src/pages/menu/menuData.js
-
 
 
 
@@ -84,115 +83,109 @@ const s_6_namespaceObject = __webpack_require__.p + "img/6.482ea7ba905fa61923b8.
 
 var menuData = {
   mainCourse: [{
-    "name": "Дорадо с овощами грилль",
-    "price": "1500",
-    "pic": _1_namespaceObject,
-    "details": "Очень вкусная рыба.",
-    "kcal": "1050"
+    name: 'Дорадо с овощами грилль',
+    price: '1500',
+    pic: _1_namespaceObject,
+    details: 'Очень вкусная рыба.',
+    kcal: '1050'
   }, {
-    "name": "Стейк из премиальной вырезки с брокколи и горчичным соусом",
-    "price": "2350",
-    "pic": _2_namespaceObject,
-    "details": "Подробное описание стейка",
-    "kcal": "550"
+    name: 'Стейк из премиальной вырезки с брокколи и горчичным соусом',
+    price: '2350',
+    pic: _2_namespaceObject,
+    details: 'Подробное описание стейка',
+    kcal: '550'
   }, {
-    "name": "Тушёная козлятина на кости с картофельным пюре на сливках",
-    "price": "2500",
-    "pic": _3_namespaceObject,
-    "details": "Подробное описание тушёной козлятины",
-    "kcal": "420"
+    name: 'Тушёная козлятина на кости с картофельным пюре на сливках',
+    price: '2500',
+    pic: _3_namespaceObject,
+    details: 'Подробное описание тушёной козлятины',
+    kcal: '420'
   }, {
-    "name": "Итальянская классическая лазанья с говядиной в свежих томатах",
-    "price": "1450",
-    "pic": _4_namespaceObject,
-    "details": "Подробное описание итальянской классической лазаньи",
-    "kcal": "380"
+    name: 'Итальянская классическая лазанья с говядиной в свежих томатах',
+    price: '1450',
+    pic: _4_namespaceObject,
+    details: 'Подробное описание итальянской классической лазаньи',
+    kcal: '380'
   }, {
-    "name": "Вок с рисом и курицей под соусом терияки",
-    "price": "1000",
-    "pic": _5_namespaceObject,
-    "details": "Подробное описание вока с рисом и курицей под соусом терияки",
-    "kcal": "380"
+    name: 'Вок с рисом и курицей под соусом терияки',
+    price: '1000',
+    pic: _5_namespaceObject,
+    details: 'Подробное описание вока с рисом и курицей под соусом терияки',
+    kcal: '380'
   }, {
-    "name": "Хинкали с говядиной, калакури и аджарским соусом",
-    "price": "1250",
-    "pic": _6_namespaceObject,
-    "details": "Подробное описание хинкали с говядиной, калакури и аджарским соусом",
-    "kcal": "380"
+    name: 'Хинкали с говядиной, калакури и аджарским соусом',
+    price: '1250',
+    pic: _6_namespaceObject,
+    details: 'Подробное описание хинкали с говядиной, калакури и аджарским соусом',
+    kcal: '380'
   }],
   salad: [{
-    "name": "Тыквенное наслаждение",
-    "price": "500",
-    "pic": s_1_namespaceObject,
-    "details": "Утонченный торт, гелато, эспрессо, пряные семечки и свежая земляника в гармонии в каждом кусочке.",
-    "kcal": "450"
+    name: 'Тыквенное наслаждение',
+    price: '500',
+    pic: _14_namespaceObject,
+    details: 'Утонченный торт, гелато, эспрессо, пряные семечки и свежая земляника в гармонии в каждом кусочке.',
+    kcal: '450'
   }, {
-    "name": "Шоколадная симфония",
-    "price": "350",
-    "pic": s_2_namespaceObject,
-    "details": "Насладитесь роскошью шоколадного оливкового торта, смешанного с нежным лавандовым семифреддо, карамелизированным медом и взбитым кремом с оливковым маслом.",
-    "kcal": "550"
+    name: 'Шоколадная симфония',
+    price: '350',
+    pic: _15_namespaceObject,
+    details: 'Насладитесь роскошью шоколадного оливкового торта, смешанного с нежным лавандовым семифреддо, карамелизированным медом и взбитым кремом с оливковым маслом.',
+    kcal: '550'
   }, {
-    "name": "Тарт с кешью и карамелью",
-    "price": "500",
-    "pic": s_3_namespaceObject,
-    "details": "Роскошный тарт с кешью в карамельном масле, сопровождаемый свежестью цитрусового варенья, гелато с маслом из козьего молока и нежными маринованными кумкватами. В каждой порции - идеальное сочетание сладкого и освежающего.",
-    "kcal": "420"
+    name: 'Тарт с кешью и карамелью',
+    price: '500',
+    pic: _16_namespaceObject,
+    details: 'Роскошный тарт с кешью в карамельном масле, сопровождаемый свежестью цитрусового варенья, гелато с маслом из козьего молока и нежными маринованными кумкватами. В каждой порции - идеальное сочетание сладкого и освежающего.',
+    kcal: '420'
   }, {
-    "name": "Кокосовый крем-карамель с сливами и манго",
-    "price": "450",
-    "pic": s_4_namespaceObject,
-    "details": "Нежный кокосовый крем-карамель, дополненный сочными сливами и ароматным манго, завершается карамелизованным кокосовым хрустом. Это блюдо - путешествие в тропический рай, где каждый вкус - настоящее наслаждение.",
-    "kcal": "380"
+    name: 'Кокосовый крем-карамель с сливами и манго',
+    price: '450',
+    pic: _17_namespaceObject,
+    details: 'Нежный кокосовый крем-карамель, дополненный сочными сливами и ароматным манго, завершается карамелизованным кокосовым хрустом. Это блюдо - путешествие в тропический рай, где каждый вкус - настоящее наслаждение.',
+    kcal: '380'
   }, {
-    "name": "Жареное мороженое с мусом из свежих ягод",
-    "price": "400",
-    "pic": s_5_namespaceObject,
-    "details": "Насладитесь уникальным десертом - жареным мороженым с мусом из свежих ягод, который мы создали для настоящих гурманов. Каждый кусочек хрустящей оболочки мороженого, сливается с ароматным мусом из отборных ягод, придают этому блюду невероятный вкусовой аккорд.",
-    "kcal": "380"
-  }, {
-    "name": "Медовая пахлава с грецкими орехами",
-    "price": "550",
-    "pic": s_6_namespaceObject,
-    "details": "Погрузитесь в восточные вкусы с нашей медовой пахлавой, усыпанной ароматными грецкими орехами. Каждый слой тонкого теста пропитан натуральным медом, а щедрая порция орехов добавляет этому десерту особый вкус и хрустящую текстуру.",
-    "kcal": "380"
+    name: 'Жареное мороженое с мусом из свежих ягод',
+    price: '400',
+    pic: _33_namespaceObject,
+    details: 'Насладитесь уникальным десертом - жареным мороженым с мусом из свежих ягод, который мы создали для настоящих гурманов. Каждый кусочек хрустящей оболочки мороженого, сливается с ароматным мусом из отборных ягод, придают этому блюду невероятный вкусовой аккорд.',
+    kcal: '380'
   }],
   dessert: [{
-    "name": "Индийские лепёшки с зелёным горошком в сливочном соусе",
-    "price": "750",
-    "pic": _17_namespaceObject,
-    "details": "Детали про индийские лепёшки",
-    "kcal": "450"
+    name: 'Индийские лепёшки с зелёным горошком в сливочном соусе',
+    price: '750',
+    pic: s_1_namespaceObject,
+    details: 'Детали про индийские лепёшки',
+    kcal: '450'
   }, {
-    "name": "Жгучие грилль-перцы",
-    "price": "850",
-    "pic": _16_namespaceObject,
-    "details": "Детали про жгучие грилль-перцы",
-    "kcal": "550"
+    name: 'Жгучие грилль-перцы',
+    price: '850',
+    pic: s_2_namespaceObject,
+    details: 'Детали про жгучие грилль-перцы',
+    kcal: '550'
   }, {
-    "name": "Греческий салат",
-    "price": "550",
-    "pic": _15_namespaceObject,
-    "details": "Детали про греческий салат",
-    "kcal": "420"
+    name: 'Греческий салат',
+    price: '550',
+    pic: s_3_namespaceObject,
+    details: 'Детали про греческий салат',
+    kcal: '420'
   }, {
-    "name": "Брускетта с томатами и оливковым маслом",
-    "price": "450",
-    "pic": _14_namespaceObject,
-    "details": "Детали про брускетту с томатами и оливковым маслом",
-    "kcal": "380"
+    name: 'Брускетта с томатами и оливковым маслом',
+    price: '450',
+    pic: s_4_namespaceObject,
+    details: 'Детали про брускетту с томатами и оливковым маслом',
+    kcal: '380'
   }, {
-    "name": "Морской коктейль",
-    "price": "850",
-    "pic": _33_namespaceObject,
-    "details": "Детали про морской коктейль",
-    "kcal": "380"
+    name: 'Морской коктейль',
+    price: '850',
+    pic: s_5_namespaceObject,
+    details: 'Детали про морской коктейль',
+    kcal: '380'
   }, {
-    "name": "Сырные палочки из моцареллы с клюквенным соусом",
-    "price": "850",
-    "pic": _14_namespaceObject,
-    "details": "Детали про сырные палочки из моцареллы с клюквенным соусом",
-    "kcal": "380"
+    name: 'Сырные палочки из моцареллы с клюквенным соусом',
+    price: '850',
+    pic: s_6_namespaceObject,
+    details: 'Детали про сырные палочки из моцареллы с клюквенным соусом',
+    kcal: '380'
   }]
 };
 ;// ./src/pages/menu/index.js

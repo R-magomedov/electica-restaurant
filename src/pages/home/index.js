@@ -4,38 +4,43 @@ import '../../style/home.css';
 
 import { burgerToggle } from '../../js/burger.js';
 import { initReviews } from '../home/reviews.js';
-$(function () {
+$(() => {
   burgerToggle();
-  initReviews()
+  initReviews();
   // переключение слайдов в галерее------------------
 
-  $('.rightArrow').on('click', function () {
+  $('.rightArrow').on('click', () => {
     $('.gallery').removeClass('about').addClass('values');
-  })
+  });
 
-
-  $('.leftArrow').on('click', function () {
+  $('.leftArrow').on('click', () => {
     $('.gallery').removeClass('values').addClass('about');
-  })
+  });
   // ------------------------------------------------
 
   // переключение слайдов в отзывах------------------
 
-  $('#rightReviewArrow').on('click', function (event) {
-    if (event.target.classList.contains('inactive')) return
+  $('#rightReviewArrow').on('click', (event) => {
+    if (event.target.classList.contains('inactive')) {
+      return;
+    }
     const reviewsContainer = document.getElementById('reviewsContainer');
-    const cardWidth = reviewsContainer.querySelector('.reviews__card').offsetWidth
-    reviewsContainer.scrollLeft += cardWidth + 30
-    $('#leftReviewArrow').removeClass('inactive')
-  })
+    const cardWidth =
+      reviewsContainer.querySelector('.reviews__card').offsetWidth;
+    reviewsContainer.scrollLeft += cardWidth + 30;
+    $('#leftReviewArrow').removeClass('inactive');
+  });
 
-  $('#leftReviewArrow').on('click', function (event) {
-    if (event.target.classList.contains('inactive')) return
+  $('#leftReviewArrow').on('click', (event) => {
+    if (event.target.classList.contains('inactive')) {
+      return;
+    }
     const reviewsContainer = document.getElementById('reviewsContainer');
-    const cardWidth = reviewsContainer.querySelector('.reviews__card').offsetWidth
-    reviewsContainer.scrollLeft -= cardWidth + 30
-    $('#rightReviewArrow').removeClass('inactive')
-  })
+    const cardWidth =
+      reviewsContainer.querySelector('.reviews__card').offsetWidth;
+    reviewsContainer.scrollLeft -= cardWidth + 30;
+    $('#rightReviewArrow').removeClass('inactive');
+  });
   // ------------------------------------------------
 
   // Обсервер для скрытия стрелок--------------------
@@ -46,8 +51,8 @@ $(function () {
 
   const options = {
     root: reviewsContainer,
-    rootMargin: "0px",
-    scrollMargin: "0px",
+    rootMargin: '0px',
+    scrollMargin: '0px',
     threshold: 0.3,
   };
 
@@ -55,9 +60,9 @@ $(function () {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         if (entry.target === firstCard) {
-          $('#leftReviewArrow').addClass('inactive')
+          $('#leftReviewArrow').addClass('inactive');
         } else if (entry.target === lastCard) {
-          $('#rightReviewArrow').addClass('inactive')
+          $('#rightReviewArrow').addClass('inactive');
         }
       }
     });
@@ -77,15 +82,17 @@ $(function () {
 
     if (container.hasClass('reviews--collapsed')) {
       $(this).text('Показать ещё');
-      $('html, body').animate({
-        scrollTop: container.offset().top
-      }, 300);
+      $('html, body').animate(
+        {
+          scrollTop: container.offset().top,
+        },
+        300
+      );
     } else {
       $(this).text('Скрыть');
     }
-  })
+  });
   // ---------------------------------------------
-
 
   // показать кнопку "акция" на мобильном экране--------------------------------
   const offerButton = document.getElementById('offer_open');
@@ -99,42 +106,43 @@ $(function () {
 
   // если экран маленький — вообще ничего не делаем
   if (window.innerWidth > 800) {
-
     const bookingButtons = [
       document.querySelector('.intro .button'),
-      document.querySelector('.contact .button')
+      document.querySelector('.contact .button'),
     ];
 
-    let visibleButtons = new Set();
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          visibleButtons.add(entry.target);
-        } else {
-          visibleButtons.delete(entry.target);
-        }
-      });
+    const visibleButtons = new Set();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            visibleButtons.add(entry.target);
+          } else {
+            visibleButtons.delete(entry.target);
+          }
+        });
 
-      offerButton.classList.toggle('is-visible', visibleButtons.size === 0);
-    }, {
-      threshold: 0.3
-    });
-    bookingButtons.forEach(btn => observer.observe(btn));
+        offerButton.classList.toggle('is-visible', visibleButtons.size === 0);
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+    bookingButtons.forEach((btn) => observer.observe(btn));
   }
   // ---------------------------------------------
 
   // открытие модального окна "Акция"
 
-  $(document).on('click', '#offer_open, #button_mob', function () {
+  $(document).on('click', '#offer_open, #button_mob', () => {
     $('#offer').fadeIn(200);
     if (window.innerWidth <= 480) {
       document.body.classList.add('no-scroll');
     }
-  })
+  });
 
-  $(document).on('click', '#offer .close', function () {
+  $(document).on('click', '#offer .close', () => {
     $('#offer').fadeOut(200);
     document.body.classList.remove('no-scroll');
-  })
-})
-
+  });
+});

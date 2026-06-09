@@ -200,6 +200,10 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 $(function () {
   burgerToggle();
+  var url = "https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_LOKKzWUmqp7FfwxzaeJoF1qhM1mgkxZdakRuJ80b&currencies=RUB";
+  getExchangeRate(url)["catch"](function (error) {
+    return console.error(error);
+  });
   function initMenu() {
     return _initMenu.apply(this, arguments);
   }

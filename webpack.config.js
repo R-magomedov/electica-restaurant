@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
+const isDev = process.env.NODE_ENV === 'development';
+
 module.exports = {
   entry: {
     home: './src/pages/home/index.js',
@@ -14,7 +16,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'docs'),
     filename: 'js/[name].[contenthash].js',
-    publicPath: '/electica-restaurant/',
+    publicPath: isDev ? '/' : '/electica-restaurant/',
     clean: true,
   },
 
@@ -54,9 +56,9 @@ module.exports = {
           implementation: ImageMinimizerPlugin.imageminMinify,
           options: {
             plugins: [
-              ['mozjpeg', { quality: 80 }], // JPEG
-              ['pngquant', { quality: [0.7, 0.9] }], // PNG
-              ['svgo', { name: 'preset-default' }], // SVG
+              ['mozjpeg', { quality: 80 }],
+              ['pngquant', { quality: [0.7, 0.9] }],
+              ['svgo', { name: 'preset-default' }],
             ],
           },
         },
@@ -89,13 +91,22 @@ module.exports = {
       chunks: ['contact'],
       inject: true,
     }),
+
     new CopyWebpackPlugin({
       patterns: [{ from: 'public', to: '' }],
     }),
   ],
 
   devServer: {
-    static: ['./docs', './public'],
+    static: {
+      directory: path.join(__dirname, 'docs'),
+    },
+    compress: true,
+    port: 8080,
     open: true,
+    hot: true,
+    historyApiFallback: true,
   },
+
+  devtool: isDev ? 'source-map' : false,
 };

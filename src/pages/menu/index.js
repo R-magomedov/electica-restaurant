@@ -9,8 +9,8 @@ $(() => {
   burgerToggle();
 
 
-  const url = "https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_LOKKzWUmqp7FfwxzaeJoF1qhM1mgkxZdakRuJ80b&currencies=RUB"; 
-  getExchangeRate(url).catch(error => console.error(error));
+  // const url = "https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_LOKKzWUmqp7FfwxzaeJoF1qhM1mgkxZdakRuJ80b&currencies=RUB"; 
+  // getExchangeRate(url).catch(error => console.error(error));
 
   async function initMenu() {
     const category =
